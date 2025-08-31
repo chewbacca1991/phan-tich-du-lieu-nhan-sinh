@@ -2,11 +2,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import os
 
 
 def main():
     # TODO: Implement data collection logic
-    data = pd.read_csv('data.csv')  # Data file
+    data_file = 'data.csv'
+    if not os.path.exists(data_file):
+        print(f"Error: {data_file} not found.")
+        return
+    data = pd.read_csv(data_file)  # Data file
     
     # TODO: Implement data analysis logic
     print(data.describe())  # Show descriptive statistics
