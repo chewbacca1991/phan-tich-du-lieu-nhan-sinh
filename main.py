@@ -6,10 +6,10 @@ from sklearn.linear_model import LinearRegression
 
 def main():
     # TODO: Implement data collection logic
-    data = pd.read_csv('data.csv')  # File dữ liệu
+    data = pd.read_csv('data.csv')  # Data file
     
     # TODO: Implement data analysis logic
-    print(data.describe())  # Hiển thị thống kê mô tả
+    print(data.describe())  # Show descriptive statistics
     
     # TODO: Implement prediction logic
     X = data[['feature1', 'feature2']]
@@ -20,8 +20,8 @@ def main():
     predictions = model.predict(X_test)
     
     # TODO: Implement visualization logic
-    plt.scatter(X_test['feature1'], y_test, color='blue', label='Thực tế')
-    plt.scatter(X_test['feature1'], predictions, color='red', label='Dự đoán')
+    plt.scatter(X_test['feature1'], y_test, color='blue', label='Actual')
+    plt.scatter(X_test['feature1'], predictions, color='red', label='Predicted')
     plt.xlabel('Feature 1')
     plt.ylabel('Target')
     plt.legend()
