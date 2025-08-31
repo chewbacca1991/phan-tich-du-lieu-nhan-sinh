@@ -15,8 +15,9 @@ def main():
     
     # Check for required columns
     required_columns = ['feature1', 'feature2', 'target']
-    if not all(col in data.columns for col in required_columns):
-        print("Error: One or more required columns are missing.")
+    missing_columns = [col for col in required_columns if col not in data.columns]
+    if missing_columns:
+        print(f"Error: The following required columns are missing: {', '.join(missing_columns)}.")
         return
     
     # TODO: Implement data analysis logic
