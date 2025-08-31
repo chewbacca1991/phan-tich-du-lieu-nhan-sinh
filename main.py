@@ -13,6 +13,12 @@ def main():
         return
     data = pd.read_csv(data_file)  # Data file
     
+    # Check for required columns
+    required_columns = ['feature1', 'feature2', 'target']
+    if not all(col in data.columns for col in required_columns):
+        print("Error: One or more required columns are missing.")
+        return
+    
     # TODO: Implement data analysis logic
     print(data.describe())  # Show descriptive statistics
     
